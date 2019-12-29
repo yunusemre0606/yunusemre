@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>YILDIZ ETÜT MERKEZİ</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/all.css') }}" />
+</head>
+
+<body background="/static/img/bb.jpg">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-success">
+      <a class="navbar-brand display-4;" href="/">YILDIZ ETÜT MERKEZİ</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="/todos">Anasayfa<span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="/galeri">Galeri <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/hakkinda">Hakkında <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/iletisim">İletişim <span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item active">
+              <a class="nav-link" href="/kayit">Kayıt <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/giris">Giriş</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/kapat">Oturumu Kapat</a>
+            </li>
+          </ul>
+        </span>
+      </div>
+    </nav>
+
+    {% block icerik %} {% endblock %}
+  </div>
+
+  <!-- JS -->
+  <script src="{{ url_for('static',filename='js/jquery-3.4.1.slim.min.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/popper.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/all.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+{% extends "sablon.html" %} {% block icerik %}
+
+<!-- flash() ile app.py'den gelen hata varsa öncelikle bunları sayfada gösterelim-->
+{% with hatalar = get_flashed_messages() %} {% if hatalar %} {% for hata in
+hatalar %}
+<div class="p-3 mb-2 bg-danger text-white">{{ hata }}</div>
+{% endfor %} {% endif %} {% endwith %}
+
+<!-- Sayfa içeriği -->
+<div class="anailetisim container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="iletisimform">
+                    <div class="mbottom">
+
+
+                        <h2> İletişim Bilgilerinizi Bırakın </h2>
+                        <p> Soru, görüş ve önerileriniz için bilgilerinizi bırakın biz sizi arayalım. </p>
+                    </div>
+                    <form role="form" action="/tr/iletisim/" method="post">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control input-lg" placeholder="Adınız" required=""
+                                        name="isim" id="isim" value="">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control input-lg" placeholder="Soyadınız" required=""
+                                        name="soyisim" id="soyisim" value="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="email" name="email" placeholder="E-Posta Adresiniz" required=""
+                                        class="form-control input-lg" id="email" value="">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="tel" name="tel" placeholder="Telefon" required=""
+                                        class="form-control input-lg" id="tel" value="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <textarea name="mesaj" class="form-control" rows="8" cols="80"
+                                        placeholder="Mesajınız"></textarea>
+                                </div>
+                            </div>
+                        </div><button type="submit" class="btn btn-gonder2 btn-success" name="gonder">FORMU
+                            GÖNDER</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-1 text-center aralik1 hidden-xs">
+                <img class="img-responsive"
+                    src="http://erkankaratas.com.tr/wp-content/themes/drerkan/resimler/aralik1.png" alt="">
+            </div>
+            <div class="col-md-5 iletisimbilgi">
+                <h2> İletişim Bilgilerimiz </h2>
+                <table class="mtop">
+                    <tbody>
+                        <tr>
+                            <td><strong> Adres: </strong></td>
+                            <td>Malazgirt Mahallesi Orkun Sokak 4/3 Sincan/ANKARA
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong> Telefon: </strong></td>
+                            <td>+90 312 341 06 60- 4602<br>+90 312 444 19 96 - 4602</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fax: </strong></td>
+                            <td>+90 312 341 39 28</td>
+                        </tr>
+                        <tr>
+                            <td><strong>E-Mail: </strong></td>
+                            <td>yunusemreyildiz3@posta.mu.edu.tr<br>yunusemreyildiz650@gmail.com</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3058.5280639024522!2d32.56572891530813!3d39.9519448916991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d33aefc5e00d43%3A0x7dee3cdb64cc7458!2sMalazgirt%2C%20Orkun%20Sk.%2C%2006930%20Sincan%2FAnkara!5e0!3m2!1str!2str!4v1577466150429!5m2!1str!2str"
+            width="1250" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+    </div>
+</div>
+
+{% endblock %}

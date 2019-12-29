@@ -1,0 +1,30 @@
+{% extends "sablon.html" %} {% block icerik %}
+<!-- flash() ile app.py'den gelen hata varsa öncelikle bunları sayfada gösterelim-->
+{% with hatalar = get_flashed_messages() %} {% if hatalar %} {% for hata in
+    hatalar %}
+<div class="p-3 mb-2 bg-danger text-white">{{ hata }}</div>
+{% endfor %} {% endif %} {% endwith %}
+<hr>
+
+<div class="container">
+    <img src="/static/img/hakki.jpg" width="1080" height="720" alt="">
+    <hr>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+        <P class="bg-muted"><strong class="text-danger">Yıldız Etüt Merkezi,</strong> <br> bireysel gelişimin
+            sürekliliğini ve artarak
+            devam etmesinin
+            gerekliliğine esas alır.
+            Öğrencilerin üretkenliği, fikirleri ve eleştirileri ciddiye alınır.Öğrencinin kendi gelişimine katkı, okulun
+            gelişimine katkı, sosyal yaşama katkı, kısaca her alanda katkısı teşvik edilir.Aldığı eğitimi topluma
+            verebilen ve insanlığın gelişimi için bunun önemini fark edebilen nesillerin yetiştirilmesi amaçlanmaktadır.
+            Başkalarının kişilik, hak ve özgürlüklerine her koşul altında saygı ve tahammül, eğitim felsefemizin
+            ayrılmaz parçasıdır.>Bireysel gelişimi hedefleyen kurumumuzda bireysel düşünce teşvik edilmez. Tersine,
+            bireysel faydalı yükseltilmesinin toplumsal mutluluğun oluşması için yeterli olmayacağı, toplumun elde
+            edeceği toplam faydanın yükseltilmesinin nihai hedef olması gerektiği öğrencilere anlatılır ve yaşatılır.
+        </P>
+
+    </nav>
+
+    {% endblock %}
